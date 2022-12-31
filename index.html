@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Not quite yet ready for production.">
+    <title>durinthal.net</title>
+    <style>
+        .container {
+            display: flex;              /* establish flex container */
+            flex-direction: column;     /* stack flex items vertically */
+            justify-content: center;    /* center items vertically, in this case */
+            align-items: center;        /* center items horizontally, in this case */
+            height: 600px;
+            /*border: 1px solid black;*/
+        }
+
+        .box {
+            /*width: 300px;*/
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+    <div class="container">
+        <div class="box" id="video">
+            <p>You've disabled Javascript? That's cool.
+            <p>I mean, I do that most of the time too unless I need it for a site.
+            <p>It kinda looks like you need that here too.
+            <p>But all I'm doing is showing a random song I like on Youtube.
+        </div>
+    </div>
+
+    <script>
+    var videoChoices = [
+        '8Lju13U1zEE',  // Nica's Dream
+        '-Tdu4uKSZ3M',  // Roundabout
+        'PDSkFeMVNFs',  // Zenzenzense
+        '9wh8FgsEtNQ',  // Flyers
+        '_HyCUr95LEU',  // Tabi no Tochuu (Live Acoustic)
+        'Zh9lynUFikc',  // Platinum Disco
+        'pB3gc6Uc7y0',  // Never
+        'T0N5YblvT1c',  // Duvet
+        'po_a1SmZKLs',  // Un Sospiro
+        'SLKAih_u5W0',  // Moon's Cocoon
+        'eLPs_w-FepA',  // Kimino Shiranai Monogatari
+        'irQ_d78feMA',  // MLP AMV Epic
+        'qLrnkK2YEcE',  // Frontier Psychiatrist
+        'SnXkhkEvNIM',  // Hikaru Nara
+        'SPlQpGeTbIE',  // Move Your Feet
+        'gAjR4_CbPpQ',  // Harder Better Faster Stronger
+    ];
+    var videoId = videoChoices[Math.floor(Math.random() * videoChoices.length)];
+    var embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>'
+    $("#video").html(embed.replace('%s', videoId));
+
+
+    </script>
+</body>
+</html>
